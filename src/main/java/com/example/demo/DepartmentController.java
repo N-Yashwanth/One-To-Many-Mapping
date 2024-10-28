@@ -57,8 +57,9 @@ public class DepartmentController {
 		return deptRepo.save(department);
 	}
 	@DeleteMapping("/{id}")
-	public void deleteDepartment(@PathVariable int id) {
+	public String deleteDepartment(@PathVariable int id) {
 		deptRepo.deleteById(id);
+		return "department deleted successfully";
 	}
 	
 	@GetMapping("/page/{pageNo}/{pageSize}")

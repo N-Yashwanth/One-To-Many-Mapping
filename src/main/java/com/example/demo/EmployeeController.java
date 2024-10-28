@@ -46,8 +46,9 @@ public class EmployeeController {
 		return empRepo.save(emp);
 	}
 	@DeleteMapping("/{id}")
-	public void deleteEmployee(@PathVariable int id) {
+	public String deleteEmployee(@PathVariable int id) {
 		empRepo.deleteById(id);
+		return "Employee deleted successfully";
 	}
 	
 	@GetMapping("/page/{pageNo}/{pageSize}")
